@@ -20,6 +20,10 @@ class PlaidError(Exception):
         self.display_message = display_message
         self.request_id = request_id
 
+        self.message = message  # - local fix, expects correction on the maintain side
+        # https://github.com/plaid/plaid-python/issues/125
+
+
     @staticmethod
     def from_response(response):
         '''
